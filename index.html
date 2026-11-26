@@ -1,4 +1,4 @@
-!<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
@@ -27,6 +27,16 @@
         <li><a href="#herramientas">Herramientas y Demo de IA</a></li>
         <li><a href="#referencias">Referencias (APA 7)</a></li>
       </ul>
+
+      <h2 style="margin-top: 1.5rem;">Páginas por sección</h2>
+      <ul class="nav-list">
+        <li><a href="secciones/introduccion.html">Abrir: Introducción</a></li>
+        <li><a href="secciones/unidad-1.html">Abrir: Unidad 1</a></li>
+        <li><a href="secciones/unidad-2.html">Abrir: Unidad 2</a></li>
+        <li><a href="secciones/unidad-3.html">Abrir: Unidad 3</a></li>
+        <li><a href="secciones/unidad-4.html">Abrir: Unidad 4</a></li>
+        <li><a href="demo_ia/index.html">Abrir: Demo IA y Q&amp;A</a></li>
+      </ul>
     </aside>
 
     <main class="content">
@@ -34,7 +44,15 @@
       <section id="introduccion">
         <h2>Portada e Introducción: ¿Qué es la Visión por Computadora?</h2>
         <p>
-          La visión por computadora es una rama de la Inteligencia Artificial que permite a las computadoras interpretar y comprender información visual proveniente de imágenes o videos. A lo largo de este e-book exploraremos cómo se transforman los datos visuales en representaciones útiles, combinando procesamiento clásico, redes neuronales convolucionales, Realidad Aumentada (RA) y demostraciones prácticas de IA.
+          La visión por computadora es una rama de la Inteligencia Artificial que permite a las computadoras interpretar y comprender información visual proveniente de imágenes o videos. En este e-book recorremos desde la estructura de la imagen digital y el procesamiento clásico hasta las redes neuronales convolucionales, las aplicaciones reales, la ética, la Realidad Aumentada (RA) y una demostración práctica de IA.
+        </p>
+        <img
+          src="assets/diagramas/pipeline-vision.svg"
+          alt="Etapas de un sistema de visión por computadora: captura, preprocesamiento, características e inferencia"
+          style="max-width: 100%; height: auto; border-radius: 10px; margin-top: 1rem; border: 1px solid #dbeafe;"
+        />
+        <p style="margin-top: 0.75rem;">
+          <a href="secciones/introduccion.html">Leer introducción completa →</a>
         </p>
       </section>
 
@@ -42,80 +60,100 @@
       <section id="unidad-1" class="bloque">
         <h2>Unidad 1: Fundamentos de la Imagen Digital</h2>
         <p>
-          Abordamos cómo se estructura una imagen digital a partir de elementos discretos y cómo se representa el color en distintos modelos.
+          Una imagen digital se organiza como una matriz de píxeles con una resolución determinada y se representa en distintos espacios de color, como <strong>RGB</strong> y <strong>escala de grises</strong>.
         </p>
         <ul>
           <li><strong>Temas:</strong> Píxeles, resolución y espacios de color (RGB, escala de grises).</li>
         </ul>
         <div class="recurso-box">
           <h3>Recurso Interactivo (RA)</h3>
-          <p><strong>Simulador de canales de color y modelo de cámara (RA):</strong> Explora la composición de color y conceptos espaciales mediante realidad aumentada (AR.js, Adobe Aero o Assemblr Studio).</p>
-          <span class="estado" id="estado-ra-u1">Enlace / QR de RA por vincular</span>
+          <p><strong>Simulador de canales de color y modelo de cámara (RA):</strong> Explora la composición RGB y conceptos espaciales en Realidad Aumentada con AR.js (marcador Hiro).</p>
+          <a href="assets/ra_assets/visor-ra.html" class="btn" style="display: inline-block; text-decoration: none;">Abrir experiencia WebAR (AR.js)</a>
         </div>
+        <p style="margin-top: 0.75rem;">
+          <a href="secciones/unidad-1.html">Ir a la página de la Unidad 1 →</a>
+        </p>
       </section>
 
       <!-- UNIDAD 2 -->
       <section id="unidad-2" class="bloque">
         <h2>Unidad 2: Procesamiento Clásico de Imágenes</h2>
         <p>
-          Estudiamos técnicas tradicionales para mejorar, analizar y transformar imágenes antes o sin recurrir a aprendizaje profundo.
+          Analizamos técnicas clásicas para preparar y transformar imágenes antes del análisis avanzado o la inferencia.
         </p>
         <ul>
           <li><strong>Temas:</strong> Filtros espaciales, detección de bordes y umbralización.</li>
         </ul>
         <div class="recurso-box">
           <h3>Recurso Interactivo</h3>
-          <p><strong>Comparador visual antes/después con OpenCV:</strong> Contrasta imágenes originales frente a resultados generados con Python, OpenCV y Matplotlib.</p>
+          <p><strong>Comparador visual antes/después con OpenCV:</strong> Alterna entre la imagen original y los resultados generados con Python, OpenCV y Matplotlib.</p>
           <button type="button" class="btn" onclick="alternarComparador()">Alternar vista Antes / Después</button>
-          <p id="comparador-texto" class="nota-dinamica">Vista actual: Imagen original (sin procesar).</p>
+          <p id="comparador-texto" class="nota-dinamica">Vista actual: Imagen original con ruido (sin procesar).</p>
+          <img
+            id="img-comparador"
+            src="assets/imagenes_opencv/original.png"
+            alt="Imagen original sin procesar"
+            style="max-width: 100%; height: auto; border-radius: 8px; margin-top: 0.75rem; border: 1px solid #bae6fd;"
+          />
         </div>
+        <p style="margin-top: 0.75rem;">
+          <a href="secciones/unidad-2.html">Ir a la página de la Unidad 2 →</a>
+        </p>
       </section>
 
       <!-- UNIDAD 3 -->
       <section id="unidad-3" class="bloque">
         <h2>Unidad 3: Deep Learning y Visión por Computadora</h2>
         <p>
-          Analizamos modelos modernos basados en aprendizaje profundo capaces de aprender patrones complejos directamente desde los datos visuales.
+          Estudiamos modelos profundos capaces de aprender jerarquías de características para clasificar, detectar objetos y segmentar escenas.
         </p>
         <ul>
-          <li><strong>Temas:</strong> Redes Neuronales Convolucionales (CNN), detección de objetos y segmentación (por ejemplo, arquitecturas como YOLO o modelos de clasificación visual).</li>
+          <li><strong>Temas:</strong> Redes Neuronales Convolucionales (CNN), detección de objetos (como YOLO) y segmentación.</li>
         </ul>
         <div class="recurso-box">
           <h3>Recurso Interactivo (RA)</h3>
-          <p><strong>Explorador de detección de objetos en escena (RA):</strong> Observa cómo se identifican objetos en una escena, junto con etiquetas y niveles de confianza.</p>
-          <span class="estado">Escena / marcador RA por vincular</span>
+          <p><strong>Explorador de detección de objetos en escena (RA):</strong> Visualiza cómo se interpretan elementos y espacios visuales mediante RA y demostraciones aplicadas.</p>
+          <a href="assets/ra_assets/visor-ra.html" class="btn" style="display: inline-block; text-decoration: none;">Abrir visor RA</a>
+          <a href="demo_ia/index.html" class="btn" style="display: inline-block; text-decoration: none; margin-left: 0.4rem;">Ver predicciones y confianza</a>
         </div>
+        <p style="margin-top: 0.75rem;">
+          <a href="secciones/unidad-3.html">Ir a la página de la Unidad 3 →</a>
+        </p>
       </section>
 
       <!-- UNIDAD 4 -->
       <section id="unidad-4" class="bloque">
         <h2>Unidad 4: Aplicaciones Reales y Ética</h2>
         <p>
-          Revisamos el impacto práctico de la visión por computadora en distintos sectores y la responsabilidad ética al desplegar estos sistemas.
+          Revisamos aplicaciones prácticas y el análisis crítico de sesgos visuales en sistemas de visión por computadora.
         </p>
         <ul>
           <li><strong>Temas:</strong> Casos de uso en medicina, vehículos autónomos e industria.</li>
         </ul>
         <div class="recurso-box">
           <h3>Actividad Final</h3>
-          <p><strong>Cuestionario interactivo y análisis de sesgos visuales:</strong> Evalúa lo aprendido e identifica posibles sesgos en datos, etiquetas o predicciones visuales.</p>
+          <p><strong>Cuestionario interactivo y análisis de sesgos visuales:</strong> Reflexiona sobre limitaciones en datos, etiquetas y escenarios reales.</p>
           <button type="button" class="btn" onclick="mostrarPistaEtica()">Ver guía rápida de análisis de sesgos</button>
           <p id="pista-etica" class="nota-dinamica"></p>
         </div>
+        <p style="margin-top: 0.75rem;">
+          <a href="secciones/unidad-4.html">Ir a la página de la Unidad 4 →</a>
+        </p>
       </section>
 
       <!-- HERRAMIENTAS Y DEMO DE IA -->
       <section id="herramientas" class="bloque">
-        <h2>Herramientas del Proyecto y Caso Práctico de IA</h2>
+        <h2>Herramientas y Caso Práctico de IA</h2>
         <p>
-          El proyecto integra herramientas de publicación, producción y análisis visual para ofrecer una experiencia educativa interactiva:
+          El proyecto reúne herramientas de publicación, producción visual, Realidad Aumentada y una demostración práctica con asistente virtual de preguntas y respuestas:
         </p>
         <ul>
-          <li><strong>Publicación del e-book:</strong> GitBook, Book Creator o Quarto (y despliegue web en GitHub Pages).</li>
-          <li><strong>Producción de contenido:</strong> Google Docs, Canva, Python con OpenCV y Matplotlib, Excalidraw / draw.io y Zotero (APA).</li>
-          <li><strong>Interactividad con RA:</strong> AR.js (WebAR), Adobe Aero y Assemblr Studio.</li>
-          <li><strong>Demostración de IA y asistente:</strong> Demostración aplicada de detección/clasificación visual (con etiquetas y niveles de confianza) complementada con un asistente virtual de preguntas y respuestas sobre el tema.</li>
+          <li><strong>Publicación:</strong> GitBook, Book Creator o Quarto (desplegado aquí en GitHub Pages).</li>
+          <li><strong>Producción:</strong> Google Docs, Canva, Python con OpenCV y Matplotlib, Excalidraw / draw.io y Zotero (APA).</li>
+          <li><strong>Realidad Aumentada:</strong> AR.js (WebAR), Adobe Aero y Assemblr Studio.</li>
+          <li><strong>Caso práctico de IA:</strong> Demostración de detección/clasificación con etiquetas y niveles de confianza, más asistente de preguntas y respuestas.</li>
         </ul>
+        <a href="demo_ia/index.html" class="btn" style="display: inline-block; text-decoration: none;">Abrir Demo de IA y Asistente Q&amp;A</a>
       </section>
 
       <!-- REFERENCIAS APA 7 -->
@@ -127,6 +165,9 @@
           <li>Goodfellow, I., Bengio, Y., &amp; Courville, A. (2016). <em>Deep learning</em>. MIT Press.</li>
           <li>Szeliski, R. (2022). <em>Computer vision: Algorithms and applications</em> (2nd ed.). Springer.</li>
         </ul>
+        <p style="margin-top: 0.5rem;">
+          <a href="referencias/bibliografia.md">Ver archivo bibliografia.md →</a>
+        </p>
       </section>
     </main>
   </div>
