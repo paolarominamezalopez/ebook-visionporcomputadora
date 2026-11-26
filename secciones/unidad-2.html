@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Unidad 2 — Procesamiento Clásico de Imágenes</title>
+  <link rel="stylesheet" href="../styles.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="container">
+      <span class="badge">Unidad 2 • Visión por Computadora</span>
+      <h1>Procesamiento Clásico de Imágenes</h1>
+      <p>Filtros espaciales, detección de bordes y umbralización</p>
+    </div>
+  </header>
+
+  <main class="content" style="max-width: 900px; margin: 2rem auto;">
+    <p><a href="../index.html">← Volver al inicio del E-Book</a></p>
+
+    <h2>2.1 Filtros espaciales</h2>
+    <p>
+      Los filtros espaciales operan directamente sobre la vecindad de cada píxel mediante máscaras o kernels de convolución. Se emplean tanto para suavizar ruido (como el filtro gaussiano o de promedio) como para realzar detalles finos antes de extraer características (Bradski &amp; Kaehler, 2008; Gonzalez &amp; Woods, 2018).
+    </p>
+
+    <h2>2.2 Detección de bordes y umbralización</h2>
+    <p>
+      La detección de bordes localiza cambios abruptos de intensidad que suelen corresponder a contornos de objetos, utilizando operadores como Sobel o Canny (Bradski &amp; Kaehler, 2008). Por su parte, la umbralización segmenta una imagen en regiones binarias al comparar cada píxel contra un valor de corte fijo o adaptativo.
+    </p>
+
+    <div class="recurso-box">
+      <h3>Recurso Interactivo: Comparador visual antes/después con OpenCV</h3>
+      <p>
+        Contrasta la imagen original frente a los resultados generados en Python con OpenCV y Matplotlib tras aplicar suavizado gaussiano, detección de bordes Canny y umbralización.
+      </p>
+    </div>
+
+    <p style="margin-top: 1.5rem;">
+      <a href="unidad-1.html">← Anterior: Unidad 1</a> |
+      <a href="unidad-3.html">Siguiente: Unidad 3 — Deep Learning y Visión →</a>
+    </p>
+  </main>
+</body>
+</html>
