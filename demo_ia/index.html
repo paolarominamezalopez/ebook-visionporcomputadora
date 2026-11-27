@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Demo de IA y Asistente — Visión por Computadora</title>
+  <link rel="stylesheet" href="../styles.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="container">
+      <span class="badge">Caso Práctico Integrado • Grupo A2</span>
+      <h1>Demostración de Visión por Computadora y Asistente Q&amp;A</h1>
+      <p>Predicción con etiquetas, nivel de confianza y consulta conceptual</p>
+    </div>
+  </header>
+
+  <main class="content" style="max-width: 920px; margin: 2rem auto;">
+    <p><a href="../index.html">← Volver al inicio del E-Book</a></p>
+
+    <h2>1. Demostración de detección y clasificación visual</h2>
+    <p>Selecciona un escenario para ver cómo se presentan etiquetas y niveles de confianza:</p>
+
+    <div style="display: flex; flex-wrap: wrap; gap: 0.6rem; margin-top: 0.75rem;">
+      <button type="button" class="btn" onclick="ejecutarDemo('vial')">Escena: Vehículo autónomo</button>
+      <button type="button" class="btn" onclick="ejecutarDemo('medica')">Escena: Imagen médica</button>
+      <button type="button" class="btn" onclick="ejecutarDemo('industria')">Escena: Inspección industrial</button>
+    </div>
+
+    <div class="recurso-box" id="panel-prediccion">
+      <p><strong>Selecciona una escena arriba</strong> para ver la salida del modelo.</p>
+    </div>
+
+    <h2 style="margin-top: 2rem;">2. Asistente virtual de preguntas y respuestas</h2>
+    <p>Escribe una palabra clave (por ejemplo: <em>RGB, bordes, CNN, YOLO, sesgos, OpenCV</em>):</p>
+    <div style="display: flex; gap: 0.5rem; flex-wrap: wrap; margin-top: 0.5rem;">
+      <input type="text" id="input-pregunta" placeholder="Ej. ¿Cómo funciona una CNN o qué es RGB?" style="flex: 1; min-width: 240px; padding: 0.55rem 0.75rem; border: 1px solid #cbd5e1; border-radius: 8px;" />
+      <button type="button" class="btn" style="margin-top: 0;" onclick="consultarAsistente()">Preguntar</button>
+    </div>
+    <p id="respuesta-asistente" class="nota-dinamica" style="margin-top: 0.75rem;"></p>
+  </main>
+
+  <script>
+    function ejecutarDemo(caso) {
+      const panel = document.getElementById("panel-prediccion");
+      const datos = {
+        vial: {
+          arquitectura: "Detección de objetos en tiempo real (arquitectura tipo YOLO)",
+          entrada: "Fotograma urbano frontal (1280×720 px, RGB)",
+          predicciones: [
+            "Peatón en cruce — Confianza: 96.4%",
+            "Semáforo en verde — Confianza: 92.1%",
+            "Carril vehicular — Confianza: 89.7%"
+          ]
+        },
+        medica: {
+          arquitectura: "Segmentación y clasificación visual (CNN)",
+          entrada: "Radiografía de tórax en escala de grises (512×512 px)",
+          predicciones: [
+            "Región pulmonar segmentada — Confianza: 94.8%",
+            "Sin hallazgos anómalos críticos — Confianza: 88.5%"
+          ]
+        },
+        industria: {
+          arquitectura: "Inspección de calidad automatizada (CNN + filtros previos)",
+          entrada: "Pieza manufacturada en banda transportadora",
+          predicciones: [
+            "Pieza conforme a tolerancia — Confianza: 97.2%",
+            "Alineación correcta — Confianza: 93.0%"
+          ]
+        }
+      };
+
+      const item = datos[caso];
+      panel.innerHTML = `
+        <p><strong>Arquitectura:</strong> ${item.arquitectura}</p>
+        <p><strong>Imagen de entrada:</strong> ${item.entrada}</p>
+        <p><strong>Predicciones y confianza:</strong></p>
+        <ul>${item.predicciones.map(p => `<li>${p}</li>`).join("")}</ul>
+      `;
+    }
+
+    function consultarAsistente() {
+      const texto = document.getElementById("input-pregunta").value.toLowerCase();
+      const salida = document.getElementById("respuesta-asistente");
+
+      if (texto.includes("rgb") || texto.includes("gris") || texto.includes("pixel")) {
+        salida.textContent = "Una imagen digital es una matriz de píxeles. RGB combina tres canales (rojo, verde y azul), mientras que la escala de grises usa un solo canal de luminancia (Gonzalez & Woods, 2018).";
+      } else if (texto.includes("borde") || texto.includes("filtro") || texto.includes("opencv") || texto.includes("umbral")) {
+        salida.textContent = "El procesamiento clásico usa filtros espaciales (como el gaussiano), detección de bordes (Canny/Sobel) y umbralización (como Otsu) para extraer estructura con OpenCV (Bradski & Kaehler, 2008).";
+      } else if (texto.includes("cnn") || texto.includes("yolo") || texto.includes("deep") || texto.includes("segment")) {
+        salida.textContent = "Las Redes Neuronales Convolucionales (CNN) aprenden características visuales jerárquicas para clasificar, detectar objetos (como YOLO) o segmentar regiones a nivel de píxel (Goodfellow et al., 2016; Szeliski, 2022).";
+      } else if (texto.includes("sesgo") || texto.includes("etica") || texto.includes("ética")) {
+        salida.textContent = "Los sesgos visuales surgen cuando los datos de entrenamiento no representan adecuadamente distintos entornos, iluminación o grupos humanos, generando fallos desiguales en producción.";
+      } else {
+        salida.textContent = "Puedo ayudarte con temas del e-book: píxeles y RGB, filtros y bordes con OpenCV, redes CNN/YOLO, aplicaciones reales o sesgos visuales. Intenta incluir una de esas palabras clave.";
+      }
+    }
+  </script>
+</body>
+</html>
