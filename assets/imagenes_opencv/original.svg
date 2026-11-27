@@ -4,6 +4,6 @@
   <circle cx="330" cy="118" r="68" fill="#0284c7" />
   <rect x="440" y="65" width="160" height="105" rx="8" fill="#d97706" />
   <text x="320" y="222" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="bold" fill="#0f172a">
-    Imagen Original (RGB — Antes del procesamiento clásico)
+    Imagen Original (RGB - Antes del procesamiento clasico)
   </text>
 </svg>

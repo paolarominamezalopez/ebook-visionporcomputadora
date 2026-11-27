@@ -9,14 +9,14 @@ function alternarComparador() {
     texto.textContent =
       "Vista actual: Después del procesamiento con OpenCV (Filtro Gaussiano, Bordes Canny y Umbralización Otsu).";
     if (img) {
-      img.src = "assets/imagenes_opencv/procesado_opencv.png";
+      img.src = "assets/imagenes_opencv/procesado_opencv.svg";
       img.alt = "Resultados de procesamiento clásico con OpenCV";
     }
   } else {
     texto.textContent =
       "Vista actual: Imagen original con ruido (sin procesar).";
     if (img) {
-      img.src = "assets/imagenes_opencv/original.png";
+      img.src = "assets/imagenes_opencv/original.svg";
       img.alt = "Imagen original sin procesar";
     }
   }
