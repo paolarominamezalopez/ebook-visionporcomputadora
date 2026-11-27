@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 210" width="880" height="210">
+  <rect width="880" height="210" rx="14" fill="#f8fafc" />
+  <text x="440" y="34" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" font-weight="bold" fill="#1e3a8a">
+    Etapas de un Sistema de Visión por Computadora
+  </text>
+
+  <rect x="30" y="65" width="180" height="95" rx="12" fill="#dbeafe" stroke="#1d4ed8" stroke-width="2" />
+  <text x="120" y="102" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="15" font-weight="bold" fill="#1e3a8a">1. Captura</text>
+  <text x="120" y="126" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#334155">Imagen digital / Video</text>
+  <text x="120" y="143" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#334155">(Matriz RGB o grises)</text>
+
+  <line x1="210" y1="112" x2="245" y2="112" stroke="#0284c7" stroke-width="3" />
+  <polygon points="245,106 257,112 245,118" fill="#0284c7" />
+
+  <rect x="257" y="65" width="180" height="95" rx="12" fill="#e0f2fe" stroke="#0284c7" stroke-width="2" />
+  <text x="347" y="102" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="15" font-weight="bold" fill="#0369a1">2. Preprocesamiento</text>
+  <text x="347" y="126" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#334155">Filtros, reducción de</text>
+  <text x="347" y="143" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#334155">ruido y normalización</text>
+
+  <line x1="437" y1="112" x2="472" y2="112" stroke="#0284c7" stroke-width="3" />
+  <polygon points="472,106 484,112 472,118" fill="#0284c7" />
+
+  <rect x="484" y="65" width="180" height="95" rx="12" fill="#dbeafe" stroke="#1d4ed8" stroke-width="2" />
+  <text x="574" y="102" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="15" font-weight="bold" fill="#1e3a8a">3. Características</text>
+  <text x="574" y="126" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#334155">Bordes (Canny/Sobel)</text>
+  <text x="574" y="143" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#334155">o mapas CNN</text>
+
+  <line x1="664" y1="112" x2="699" y2="112" stroke="#0284c7" stroke-width="3" />
+  <polygon points="699,106 711,112 699,118" fill="#0284c7" />
+
+  <rect x="711" y="65" width="140" height="95" rx="12" fill="#1e3a8a" />
+  <text x="781" y="102" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="15" font-weight="bold" fill="#ffffff">4. Inferencia</text>
+  <text x="781" y="126" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#dbeafe">Etiquetas, cajas</text>
+  <text x="781" y="143" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#dbeafe">y confianza</text>
+</svg>
